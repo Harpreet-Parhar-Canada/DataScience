@@ -16,4 +16,5 @@ import matplotlib.pyplot as plt
 
 
 data = pd.read_csv("Data.csv")
-print(data)
+x=data.iloc[:,:-1].values
+print(x)
