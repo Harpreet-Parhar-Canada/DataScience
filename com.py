@@ -17,4 +17,5 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv("Data.csv")
 x=data.iloc[:,:-1].values
-print(x)
+y=data.iloc[:,3].values
+print(y)
