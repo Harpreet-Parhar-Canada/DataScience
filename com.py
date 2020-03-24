@@ -1,5 +1,6 @@
 import csv
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # arrayForColumns = ['sector','group_category','community_name','count']
 # data = pd.read_csv('https://data.calgary.ca/resource/848s-4m4z.csv');
