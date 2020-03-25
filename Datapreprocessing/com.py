@@ -1,7 +1,7 @@
 import csv
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import Imputer 
+from sklearn.preprocessing import Imputer
 
 # arrayForColumns = ['sector','group_category','community_name','count']
 # data = pd.read_csv('https://data.calgary.ca/resource/848s-4m4z.csv');
@@ -19,5 +19,13 @@ from sklearn.preprocessing import Imputer
 data = pd.read_csv("Data.csv")
 x=data.iloc[:,:-1].values
 y=data.iloc[:,3].values
+
+print("MIssing data",x)
 # Missing Data
-print(y)
+imp_mean =Imputer(missing_values='NaN', strategy='mean')
+
+imp_mean.fit(x[:,1:3])
+x[:,1:3]=imp_mean.transform(x[:,1:3])
+
+
+print("Mean",x)
