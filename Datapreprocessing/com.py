@@ -23,9 +23,9 @@ y=data.iloc[:,3].values
 print("MIssing data",x)
 # Missing Data
 imp_mean =Imputer(missing_values='NaN', strategy='mean')
-
 imp_mean.fit(x[:,1:3])
 x[:,1:3]=imp_mean.transform(x[:,1:3])
-
-
 print("Mean",x)
+
+#Categorical Data
+from sklearn.preprocessing import LabelEncoder
