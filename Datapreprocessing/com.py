@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import Imputer 
 
 # arrayForColumns = ['sector','group_category','community_name','count']
 # data = pd.read_csv('https://data.calgary.ca/resource/848s-4m4z.csv');
@@ -18,4 +19,5 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("Data.csv")
 x=data.iloc[:,:-1].values
 y=data.iloc[:,3].values
+# Missing Data
 print(y)
