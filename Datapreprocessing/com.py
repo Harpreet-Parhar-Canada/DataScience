@@ -1,34 +1,16 @@
 import csv
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import Imputer
-
-# arrayForColumns = ['sector','group_category','community_name','count']
-# data = pd.read_csv('https://data.calgary.ca/resource/848s-4m4z.csv');
-# # deletingColumns =['geocoded_column','resident_count','count']
-
-# # dataForEast = df[df['sector'] == 'EAST'].drop(deletingColumns,axis=1);
-# # dataForNortheast = df[df['sector'] == 'NORTHEAST'];
-# # dataForSouth = df[df['sector'] == 'SOUTH'];
-# # dataForWest = df[df['sector'] == 'WEST'];
-
-# filterData = pd.DataFrame(data,columns=arrayForColumns) 
-# print(filterData)
+from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 
 
 data = pd.read_csv("Data.csv")
 x=data.iloc[:,:-1].values
 y=data.iloc[:,3].values
 
-print("MIssing data",x)
-# Missing Data
-imp_mean =Imputer(missing_values='NaN', strategy='mean')
-imp_mean.fit(x[:,1:3])
-x[:,1:3]=imp_mean.transform(x[:,1:3])
-print("Mean",x)
 
 #Categorical Data
-from sklearn.preprocessing import LabelEncoder
 
-lableX = LabelEncoder()
-lableX.fit_transform(x[:,0])
+labelx = LabelEncoder()
+x[:,0]=labelx.fit_transform(x[:,0])
+print(x)
