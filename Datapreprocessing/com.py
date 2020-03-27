@@ -29,3 +29,6 @@ print("Mean",x)
 
 #Categorical Data
 from sklearn.preprocessing import LabelEncoder
+
+lableX = LabelEncoder()
+lableX.fit_transform(x[:,0])
